@@ -1,0 +1,194 @@
+{% extends 'base.html' %}
+{% block wrapper %}
+    <div class="page-wrapper" style="margin-right: 180px;margin-top: 20px">
+        <!--page-content-wrapper-->
+        <div class="page-content-wrapper">
+            <div class="page-content">
+                <div class="user-profile-page">
+                    <div class="card radius-15">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12 col-lg-7 border-right">
+                                    <div class="d-md-flex align-items-center">
+                                        <div class="mb-md-0 mb-3">
+                                            <img id="art2" src="" class="rounded-circle shadow"
+                                                 width="130" height="130"/>
+                                        </div>
+                                        <div class="ml-md-4 flex-grow-1">
+                                            <div class="d-flex align-items-center mb-1">
+                                                <h4 class="mb-0" id="name">Real Name</h4>
+                                            </div>
+                                            <p class="mb-0" id="nickname">User nickname</p>
+                                            <button type="button" class="btn btn-light" onclick="change()">Edit</button>
+                                            <button type="button" class="btn btn-light ml-2"
+                                                    onclick="window.history.back()">Return
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-5">
+                                    <table class="table table-sm table-borderless mt-md-0 mt-3">
+                                        <tbody>
+                                        <tr>
+                                            <th>Gender:</th>
+                                            <td id="sex"></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Age:</th>
+                                            <td id="age"></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Address:</th>
+                                            <td id="add"></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Last Login:</th>
+                                            <td id="lastlogin"></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <!--end row-->
+                            <ul class="nav nav-pills">
+                                <li class="nav-item"><a class="nav-link active" data-toggle="tab"
+                                                        href="#Experience"><span class="p-tab-name">My Collection</span><i
+                                        class='bx bx-donate-blood font-24 d-sm-none'></i></a>
+                                </li>
+                                <li class="nav-item"><a class="nav-link" id="profile-tab" data-toggle="tab"
+                                                        href="#Biography"><span class="p-tab-name">Play History</span><i
+                                        class='bx bxs-user-rectangle font-24 d-sm-none'></i></a>
+                                </li>
+
+                            </ul>
+                            <div class="tab-content mt-3">
+                                <div class="tab-pane fade show active" id="Experience">
+                                    <div class="card shadow-none border mb-0 radius-15">
+                                        <div class="card-body">
+                                            <div class="d-sm-flex align-items-center mb-3">
+                                                <h4 class="mb-0">Collected Songs</h4>
+                                            </div>
+                                            <div class="row">
+                                                {% for i in allsong %}
+                                                    <div class="col-lg-4">
+                                                        <div class="card radius-15">
+                                                            <div class="card-body">
+                                                                <div class="media align-items-center">
+                                                                    <img src="{{ i.songimg }}" width="80" height="80"
+                                                                         class="rounded-circle p-1 border bg-white"
+                                                                         alt="">
+                                                                    <div class="media-body ml-3">
+                                                                        <h5 class="mb-0 text-white">{{ i.songname }}</h5>
+                                                                        <p class="mb-0 text-white">{{ i.songauther }}</p>
+                                                                        <p class="mb-0 text-white">Comment:{{ i.songpl }}
+                                                                        <p>Time:{{ i.songtime }}</p></p>
+                                                                        <div class="list-inline contacts-social mt-3">
+                                                                            <a href="javascript:;"
+                                                                               class="list-inline-item" title="删除"
+                                                                               onclick="del({{ i.songid }})"> <i class="fadeIn animated bx bx-trash-alt"></i></a>
+                                                                            <a href="javascript:;"
+                                                                               class="list-inline-item" title="播放"><i
+                                                                                    class='fadeIn animated bx bx-caret-right-circle'></i></a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                {% endfor %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="Biography">
+                                  <div class="card shadow-none border mb-0 radius-15">
+                                        <div class="card-body">
+                                            <div class="d-sm-flex align-items-center mb-3">
+                                                <h4 class="mb-0">Play History</h4>
+                                               <a href="javascript:;" class="btn btn-light ml-auto radius-10" onclick="clean()">Clean Play History</a>
+                                            </div>
+                                            <div class="row">
+                                                {% for i in playsong %}
+                                                    <div class="col-lg-4">
+                                                        <div class="card radius-15">
+                                                            <div class="card-body">
+                                                                <div class="media align-items-center">
+                                                                    <img src="{{ i.songimg }}" width="80" height="80"
+                                                                         class="rounded-circle p-1 border bg-white"
+                                                                         alt="">
+                                                                    <div class="media-body ml-3">
+                                                                        <h5 class="mb-0 text-white">{{ i.songname }}</h5>
+                                                                        <p class="mb-0 text-white">{{ i.songauther }}</p>
+                                                                        <p class="mb-0 text-white">Play time:{{ i.playtime }}
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                {% endfor %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../static/assets/js/jquery.min.js"></script>
+    <script>
+        $.ajax({
+            url: 'userinfoindex',
+            type: 'POST',
+            data: {data: JSON.stringify({'userid': localStorage.getItem('userid')})},
+            success: function (e) {
+                var data = JSON.parse(e)
+                var src = data['userinfo'][0][2].split('\'')
+                document.getElementById('name').innerHTML = data['userinfo'][0][8]
+                document.getElementById('nickname').innerHTML = data['userinfo'][0][1]
+                document.getElementById('sex').innerHTML = data['userinfo'][0][5]
+                document.getElementById('age').innerHTML = data['userinfo'][0][4]
+                document.getElementById('add').innerHTML = data['userinfo'][0][7]
+                document.getElementById('lastlogin').innerHTML = data['userinfo'][0][9]
+                document.getElementById('art2').src = 'data:image/jpg;base64,' + src[1]
+            }
+        })
+        function del(id){
+            var data = {
+                'songid':id,
+                'userid':localStorage.getItem('userid')
+            }
+            $.ajax({
+                url:'userdel',
+                type:"POST",
+                data:{'data':JSON.stringify(data)},
+                success:function (e) {
+                    var data = JSON.parse(e)
+                    alert(data.info)
+                    location.reload()
+                }
+            })
+        }
+        function clean(){
+           var data = {
+                'userid':localStorage.getItem('userid')
+            }
+            $.ajax({
+                url:'userclean',
+                type:"POST",
+                data:{'data':JSON.stringify(data)},
+                success:function (e) {
+                    var data = JSON.parse(e)
+                    alert(data.info)
+                    location.reload()
+                }
+            })
+        }
+        function change(){
+            location.href = 'bangdinguserinfo'
+        }
+    </script>
+{% endblock %}

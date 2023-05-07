@@ -1,0 +1,181 @@
+﻿{% extends 'base.html' %}
+{% block wrapper %}
+    <!--page-wrapper-->
+    <div class="page-wrapper">
+        <div class="page-content-wrapper">
+            <div class="page-content">
+                <!--breadcrumb-->
+                    <div class="container" style="transform:translate(80px)">
+                        <div class="ysslider">
+                            {% for i in  cfre %}
+                                <div class="item"><a href="https://music.163.com/#/song?id={{ i.songid }}"> <img src="{{ i.songimg }}" style="height: 500px;width: 600px;border-radius:10%;"/></a></div>
+                            {% endfor %}
+                            <div class="controlbar">
+                                <a href="javascript:void(0);" class="prev">◀◀</a>
+                                <a href="javascript:void(0);" class="next">▶▶</a>
+                            </div>
+                        </div>
+                    </div>
+                <div class="page-breadcrumb d-none d-md-flex align-items-center mb-3">
+                    <div class="breadcrumb-title pr-3">Personalized recommendation</div>
+                </div>
+                <div class="row">
+                    {% for i in  cfre %}
+                        <div class="col-lg-4">
+                            <div class="card radius-15">
+                                <div class="card-body">
+                                    <div class="media align-items-center">
+                                        <img src="{{ i.songimg }}" width="80" height="80"
+                                             class="rounded-circle p-1 border bg-white" alt="">
+                                        <div class="media-body ml-3">
+                                            <h5 class="mb-0 text-white">{{ i.songname }}</h5>
+                                            <p class="mb-0 text-white">{{ i.songauther }}</p>
+                                            <p class="mb-0 text-white">Comment:{{ i.songpl }}
+                                                <p>Time:{{ i.songtime }}</p></p>
+                                            <div class="list-inline contacts-social mt-3">
+                                                <a href="javascript:;" class="list-inline-item" title="Collect"
+                                                   onclick="sc({{ i.songid }})"> <i
+                                                        class='lni lni-circle-plus'></i></a>
+                                                <a href="javascript:;" class="list-inline-item" title="Play"
+                                                   onclick="play({{ i.songid }})"><i
+                                                        class='fadeIn animated bx bx-caret-right-circle'></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <!--end page-content-wrapper-->
+        <div class="page-content-wrapper">
+            <div class="page-content">
+                <div class="page-breadcrumb d-none d-md-flex align-items-center mb-3">
+                    <div class="breadcrumb-title pr-3">Recommendation based on collection:</div>
+                </div>
+                <div class="row">
+                    {% for i in  gxre %}
+                        <div class="col-lg-4">
+                            <div class="card radius-15">
+                                <div class="card-body">
+                                    <div class="media align-items-center">
+                                        <img src="{{ i.songimg }}" width="80" height="80"
+                                             class="rounded-circle p-1 border bg-white" alt="">
+                                        <div class="media-body ml-3">
+                                            <h5 class="mb-0 text-white">{{ i.songname }}</h5>
+                                            <p class="mb-0 text-white">{{ i.songauther }}</p>
+                                            <p class="mb-0 text-white">Comment:{{ i.songpl }}
+                                            <p>Time:{{ i.songtime }}</p></p>
+                                            <div class="list-inline contacts-social mt-3">
+                                                <a href="javascript:;" class="list-inline-item" title="收藏"
+                                                   onclick="sc({{ i.songid }})"> <i
+                                                        class='lni lni-circle-plus'></i></a>
+                                                <a href="javascript:;" class="list-inline-item" title="播放"
+                                                   onclick="play({{ i.songid }})"><i
+                                                        class='fadeIn animated bx bx-caret-right-circle'></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="page-content-wrapper">
+            <div class="page-content">
+                <div class="page-breadcrumb d-none d-md-flex align-items-center mb-3">
+                    <div class="breadcrumb-title pr-3">All songs</div>
+                </div>
+                <div class="row">
+                    {% for i in  allsong %}
+                        <div class="col-lg-4">
+                            <div class="card radius-15">
+                                <div class="card-body">
+                                    <div class="media align-items-center">
+                                        <img src="{{ i.songimg }}" width="80" height="80"
+                                             class="rounded-circle p-1 border bg-white" alt="">
+                                        <div class="media-body ml-3">
+                                            <h5 class="mb-0 text-white">{{ i.songname }}</h5>
+                                            <p class="mb-0 text-white">{{ i.songauther }}</p>
+                                            <p class="mb-0 text-white">Comment:{{ i.songpl }}
+                                            <p>Time:{{ i.songtime }}</p></p>
+                                            <div class="list-inline contacts-social mt-3">
+                                                <a href="javascript:;" class="list-inline-item" title="收藏"
+                                                   onclick="sc({{ i.songid }})"> <i
+                                                        class='lni lni-circle-plus'></i></a>
+                                                <a href="javascript:;" class="list-inline-item" title="播放"
+                                                   onclick="play({{ i.songid }})"><i
+                                                        class='fadeIn animated bx bx-caret-right-circle'></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    {% endfor %}
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <!--end page-wrapper-->
+    <script src="../static/assets/js/jquery.min.js"></script>
+    <script src="../static/assets/plugins/simplebar/js/simplebar.min.js"></script>
+    <script src="../static/assets/plugins/metismenu/js/metisMenu.min.js"></script>
+    <script src="../static/assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
+    <script>
+        function sc(id) {
+            var data = {
+                'songid': id,
+                'userid': localStorage.getItem('userid')
+            }
+            $.ajax({
+                url: 'usersc',
+                type: "POST",
+                data: {'data': JSON.stringify(data)},
+                success: function (e) {
+                    var data = JSON.parse(e)
+                    alert(data.info)
+                }
+            })
+        }
+
+        function play(id) {
+            var data = {
+                'songid': id,
+                'userid': localStorage.getItem('userid')
+            }
+            $.ajax({
+                url: 'userplay',
+                type: "POST",
+                data: {'data': JSON.stringify(data)},
+                success: function (e) {
+                    var data = JSON.parse(e)
+                    if (data.info == 'ok') {
+                        window.open('https://music.163.com/#/song?id=' + id)
+                    }
+                }
+            })
+        }
+    </script>
+    <script>
+        var mySlider = new ysSlider({
+            animate: true,
+            touch: true
+        });
+
+        document.querySelector(".prev").onclick = function () {
+            mySlider.prev();
+        }
+
+        document.querySelector(".next").onclick = function () {
+            mySlider.next();
+        }
+    </script>
+{% endblock %}

@@ -1,0 +1,310 @@
+{% extends 'admin.html' %}
+{% block page %}
+    <!--page-wrapper-->
+    <div class="page-wrapper">
+        <!--page-content-wrapper-->
+        <div class="page-content-wrapper">
+            <div class="page-content">
+                <div class="row">
+                    <div class="col-12 col-lg-4">
+                        <div class="card radius-15">
+                            <div class="card-body">
+                                <div class="d-flex mb-2">
+                                    <div>
+                                        <p class="mb-0 font-weight-bold text-white">Number of music library</p>
+                                        <h2 class="mb-0 text-white">{{ num.songnum }}</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <div class="card radius-15">
+                            <div class="card-body">
+                                <div class="d-flex mb-2">
+                                    <div>
+                                        <p class="mb-0 font-weight-bold text-white">Number of music comment</p>
+                                        <h2 class="mb-0 text-white">{{ num.plnum }}</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <div class="card radius-15">
+                            <div class="card-body">
+                                <div class="d-flex mb-2">
+                                    <div>
+                                        <p class="mb-0 font-weight-bold text-white">Number of music type</p>
+                                        <h2 class="mb-0 text-white">19</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-lg-6">
+                        <div class="card radius-15">
+                            <div class="card-header border-bottom-0">
+                                <div class="d-lg-flex align-items-center">
+                                    <div>
+                                        <h5 class="mb-lg-0">Amount of Play TOP10</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div id="chart4" style="height: 300px"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <div class="card radius-15">
+                            <div class="card-body">
+                                <div class="d-lg-flex align-items-center">
+                                    <div>
+                                        <h5 class="mb-4">The proportion of various types of songs</h5>
+                                    </div>
+                                </div>
+                                <div id="chart5" style="height: 300px"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-lg-6">
+                        <div class="card radius-15">
+                            <div class="card-header border-bottom-0">
+                                <div class="d-lg-flex align-items-center">
+                                    <div>
+                                        <h5 class="mb-lg-0">All kinds of songs play first</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div id="chart7" style="height: 300px"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <div class="card radius-15">
+                            <div class="card-body">
+                                <div class="d-lg-flex align-items-center">
+                                    <div>
+                                        <h5 class="mb-4">TOP3 most liked comments</h5>
+                                    </div>
+                                </div>
+                                <ul>
+                                    {% for x in data %}
+                                        <li>
+                                            <p>User Name:{{ x.username }}
+                                                <text type="button" class="btn" data-toggle="modal"
+                                                      data-target="#exampleModal{{ x.id }}" title="点击查看详情">
+                                                    Amount of Likes:{{ x.cont }}
+                                                </text>
+                                            </p>
+                                        </li>
+                                        <div class="modal fade" id="exampleModal{{ x.id }}" tabindex="-1" role="dialog"
+                                             aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title">  {{ x.usercontent }}</h5>
+                                                        <button type="button" class="close" data-dismiss="modal"
+                                                                aria-label="Close"><span
+                                                                aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+    <!--end page-wrapper-->
+    <script src="../static/assets/js/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
+    <script src="../static/assets/js/jquery.min.js"></script>
+    <script src="../static/assets/js/popper.min.js"></script>
+    <script src="../static/assets/js/bootstrap.min.js"></script>
+    <!--plugins-->
+    <script src="../static/assets/plugins/simplebar/js/simplebar.min.js"></script>
+    <script src="../static/assets/plugins/metismenu/js/metisMenu.min.js"></script>
+    <script src="../static/assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
+    <script src="../static/assets/js/app.js"></script>
+
+    <script>
+        $.ajax({
+            url: "admin/gettop",
+            type: "GET",
+            success: function (e) {
+                var data = JSON.parse(e)
+                var myChart = echarts.init(document.getElementById('chart4'));
+                var option = {
+                    tooltip: {
+                        trigger: 'axis',
+                        axisPointer: {
+                            type: 'shadow'
+                        }
+                    },
+                    grid: {
+                        left: '3%',
+                        right: '4%',
+                        bottom: '3%',
+                        containLabel: true
+                    },
+                    xAxis: [
+                        {
+                            type: 'category',
+                            data: data.songname,
+                            axisTick: {
+                                alignWithLabel: true
+                            },
+                            axisLine: {
+                                lineStyle: {
+                                    color: '#fff',
+                                    width: 1,//这里是为了突出显示加上的
+                                }
+                            }
+
+                        },
+                    ],
+                    yAxis: [
+                        {
+                            type: 'value',
+                            axisLine: {
+                                lineStyle: {
+                                    color: '#fff',
+                                    width: 1,//这里是为了突出显示加上的
+                                }
+                            }
+                        }
+
+                    ],
+                    series: [
+                        {
+                            name: '播放数量',
+                            type: 'bar',
+                            barWidth: '60%',
+                            data: data.songnum
+                        }
+                    ]
+                };
+                myChart.setOption(option);
+            }
+        })
+        $.ajax({
+            url: "admin/getlx",
+            type: "GET",
+            success: function (e) {
+                var data = JSON.parse(e)
+                var myChart = echarts.init(document.getElementById('chart5'));
+                var option = {
+                    tooltip: {
+                        trigger: 'item',
+                        formatter: '{a} <br/>{b} : {c} ({d}%)'
+                    },
+                    legend: {
+                        orient: 'vertical',
+                        left: 'left'
+                    },
+                    series: [
+                        {
+                            name: '歌曲占比',
+                            type: 'pie',
+                            radius: '50%',
+                            data: data,
+                            emphasis: {
+                                itemStyle: {
+                                    shadowBlur: 10,
+                                    shadowOffsetX: 0,
+                                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+                                }
+                            }
+                        }
+                    ]
+                };
+                myChart.setOption(option);
+            }
+        })
+        $.ajax({
+            url: "admin/getlxtop",
+            type: "GET",
+            success: function (e) {
+                var data = JSON.parse(e)
+                var myChart = echarts.init(document.getElementById('chart7'));
+                var option = {
+                    tooltip: {
+                        trigger: 'axis',
+                        axisPointer: {
+                            type: 'shadow'
+                        }
+                    },
+                    grid: {
+                        left: '3%',
+                        right: '4%',
+                        bottom: '3%',
+                        containLabel: true
+                    },
+                    xAxis: [
+                        {
+                            type: 'category',
+                            data: data.name,
+                            axisTick: {
+                                alignWithLabel: true
+                            },
+                            axisLine: {
+                                lineStyle: {
+                                    color: '#fff',
+                                    width: 1,//这里是为了突出显示加上的
+                                }
+                            }
+
+                        },
+                    ],
+                    yAxis: [
+                        {
+                            type: 'value',
+                            axisLine: {
+                                lineStyle: {
+                                    color: '#fff',
+                                    width: 1,//这里是为了突出显示加上的
+                                }
+                            }
+                        }
+
+                    ],
+                    series: [
+                        {
+                            name: '播放数量',
+                            type: 'bar',
+                            barWidth: '60%',
+                            data: data.value
+                        }
+                    ]
+                };
+                myChart.setOption(option);
+            }
+        })
+    </script>
+    <script>
+        $('#exampleVaryingModalContent').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget) // Button that triggered the modal
+            var recipient = button.data('whatever') // Extract info from data-* attributes
+            // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+            // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+            var modal = $(this)
+            modal.find('.modal-title').text('New message to ' + recipient)
+            modal.find('.modal-body input').val(recipient)
+        });
+    </script>
+{% endblock %}

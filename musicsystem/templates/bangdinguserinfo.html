@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <title>Personal information binding</title>
+    <!--favicon-->
+    <link rel="icon" href="../static/assets/images/favicon-32x32.png" type="image/png"/>
+    <!--plugins-->
+    <link href="../static/assets/plugins/simplebar/css/simplebar.css" rel="stylesheet"/>
+    <link href="../static/assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet"/>
+    <link href="../static/assets/plugins/metismenu/css/metisMenu.min.css" rel="stylesheet"/>
+    <!-- loader-->
+    <link href="../static/assets/css/pace.min.css" rel="stylesheet"/>
+    <script src="../static/assets/js/pace.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../static/assets/css/bootstrap.min.css"/>
+    <!-- Icons CSS -->
+    <link rel="stylesheet" href="../static/assets/css/icons.css"/>
+    <!-- App CSS -->
+    <link rel="stylesheet" href="../static/assets/css/app.css"/>
+
+
+</head>
+
+<body class="bg-theme bg-theme1">
+<!-- wrapper -->
+<div class="wrapper">
+
+
+    <!--page-wrapper-->
+    <form action="bangdinguserinfo" method="post" id="form" enctype="multipart/form-data">
+        <div class="page-wrapper" style="margin-right: 120px">
+            <div class="page-content-wrapper">
+                <div class="page-content">
+                    <div class="user-profile-page">
+                        <div class="card radius-15">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-12 col-lg-7">
+                                        <div class="d-md-flex align-items-center">
+                                            <div class="ml-md-4 flex-grow-1">
+                                                <h4 class="mb-0">Profile</h4>
+                                                <input type="file" name="art" value="选择头像" class="btn btn-light">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="tab-content mt-3">
+                                    <div class="tab-pane fade show active" id="Edit-Profile">
+                                        <div class="card shadow-none   mb-0 radius-15">
+                                            <div class="card-body">
+                                                <div class="form-body">
+                                                    <div class="row">
+                                                        <div class="col-12 col-lg-12">
+                                                            <div class="form-group">
+                                                                <label>UserId</label>
+                                                                <input type="text" name="id" id="userID" value=""
+                                                                       class="form-control">
+                                                            </div>
+                                                            <div class="form-row">
+                                                                <div class="form-group col-md-6">
+                                                                    <label>Name</label>
+                                                                    <input type="text" name="name" value=""
+                                                                           class="form-control">
+                                                                </div>
+                                                                <div class="form-group col-md-6">
+                                                                    <label>User Nickname</label>
+                                                                    <input type="text" name="nickname" value=""
+                                                                           class="form-control">
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                                <label>Password</label>
+                                                                <input type="text" name="password" value=""
+                                                                       class="form-control">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Telephone</label>
+                                                                <input type="text" name="phone" value=""
+                                                                       class="form-control">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Address</label>
+                                                                <input type="text" name="add" value=""
+                                                                       class="form-control">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Age</label>
+                                                                <input type="text" name="age" value=""
+                                                                       class="form-control">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Gender</label>
+                                                                <input type="text" name="sex" value=""
+                                                                       class="form-control">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <input type="submit" value="Save" class="form-control">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--end page-content-wrapper-->
+        </div>
+    </form>
+</div>
+<!-- end wrapper -->
+
+<!-- JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="../static/assets/js/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="../static/js/jquery.form.js"></script>
+<script src="../static/assets/js/popper.min.js"></script>
+<script src="../static/assets/js/bootstrap.min.js"></script>
+
+<script>
+    var userId = localStorage.getItem('userid')
+    domid = document.getElementById('userID')
+    domid.value = userId
+    $('#form').ajaxForm(function (e) {
+        var data = JSON.parse(e)
+        if (data.info == '绑定成功'){
+            alert(data.info)
+            location.href = 'userindex?id='+localStorage.getItem('userid')
+        }else {
+            location.reload()
+        }
+    })
+</script>
+</body>
+
+</html>

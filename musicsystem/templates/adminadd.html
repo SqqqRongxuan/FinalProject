@@ -1,0 +1,125 @@
+{% extends 'admin.html' %}
+{% block page %}
+    <div class="page-content-wrapper">
+        <div class="page-content">
+
+            <div class="card radius-15">
+                <div class="card-body">
+                    <div class="card-title">
+                        <h4 class="mb-0">Add Music</h4>
+
+                    </div>
+                    <hr/>
+
+                    <form class="needs-validation" method="post" action="adminadd" id="form1">
+                        <div class="form-row">
+                            <div class="col-md-6 mb-3">
+                                <label for="validationCustom03">Song ID(NetEase Cloud ID)</label>
+                                <div class="btn-group mt-3 w-100">
+                                    <input type="text" class="btn btn-light btn-block" id="songid" name="songid">
+                                    <button type="button" class="btn btn-light" onclick="link()"><i
+                                            class="lni lni-arrow-right"></i>
+                                    </button>
+
+                                </div>
+                                <p>Click the button to fill it automatically</p>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-6 mb-3">
+                                <label for="validationCustom01">Song Name</label>
+                                <input type="text" class="form-control" id="songname" name="songname" value="">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="validationCustom02">Songwriter</label>
+                                <input type="text" class="form-control" id="songauther" name="songauther" value="">
+                            </div>
+                        </div>
+                        <div class="form-row">
+
+                            <div class="col-md-3 mb-3">
+                                <label for="validationCustom04">Song Type</label>
+                                <select class="custom-select" id="" name="songlx">
+                                    <option selected value="0">Null</option>
+                                    <option value="1">Popular</option>
+                                    <option value="2">Rock</option>
+                                    <option value="3">Folk</option>
+                                    <option value="4">Electron</option>
+                                    <option value="5">Dance</option>
+                                    <option value="6">Rop</option>
+                                    <option value="7">Light</option>
+                                    <option value="8">R&B/Soul</option>
+                                    <option value="9">Nation</option>
+                                    <option value="10">England</option>
+                                    <option value="11">Blues</option>
+                                    <option value="12">Reggae</option>
+                                    <option value="13">World</option>
+                                    <option value="14">Latin</option>
+                                    <option value="15">New Age</option>
+                                    <option value="16">Ancient</option>
+                                    <option value="17">Bossa Nova</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label for="validationCustom05">Time</label>
+                                <input type="text" class="form-control" name="songtime" id="songtime" value="">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-6 mb-3">
+                                <label for="validationCustom01">Album</label>
+                                <input type="text" class="form-control" id="songzj" name="songzj" value="">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="validationCustom02">Song picture link</label>
+                                <input type="text" class="form-control" id="songimg" name="songimg" value="">
+                            </div>
+                        </div>
+                        <button class="btn btn-primary" type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script src="../static/js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+    <script src="../static/js/jquery.form.js"></script>
+    <script>
+        $('#form1').ajaxForm(function (e) {
+            var data = JSON.parse(e)
+            alert(data.info)
+            location.reload()
+        })
+
+        function link() {
+            var data = {
+                'songid': document.getElementById('songid').value
+            }
+            $.ajax({
+                url: "getlink",
+                type: 'POST',
+                async: true,
+                data: {"data": JSON.stringify(data)},
+                beforeSend: function () {
+                     alert('Data acquisition, please wait')
+                },
+                success: function (e) {
+                    var data = JSON.parse(e)
+                    console.log(data)
+                    if(data.info == '歌曲ID有误'){
+                        alert("There is an error in the song ID, please check the ID")
+                    }else{
+                        console.log(data.songtime, data.songzj)
+                        document.getElementById('songname').value = data.songname
+                        document.getElementById('songauther').value = data.songauther
+                        document.getElementById('songimg').value = data.songimg
+                        document.getElementById('songtime').value = data.songtime
+                        document.getElementById('songzj').value = data.songzj
+                    }
+                }
+            })
+        }
+    </script>
+{% endblock %}
