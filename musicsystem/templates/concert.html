@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block wrapper %}
+    <div class="page-wrapper" style="margin-right: 180px;margin-top: 20px">
+        <div class="page-content-wrapper">
+            <div class="page-content">
+                <div class="row">
+                    {% for i in data %}
+                        <div class="col-12 col-lg-4 col-xl-2">
+                            <div class="card">
+                                <img src="{{ i.img }}" class="card-img-top" alt="" style="height: 300px;">
+                                <div class="card-body">
+                                    <p class="card-text">{{ i.name }}</p>
+                                    <p class="card-text">Price:{{ i.price }}</p>
+                                    <p class="card-text">Address:{{ i.add }}</p>
+                                    <p class="card-text">Start time:{{ i.time }}</p>
+                                </div>
+                                <p class="btn" data-toggle="modal"
+                                   data-target="#exampleModal{{ i.id }}">查看详情</p>
+                                <div class="modal fade" id="exampleModal{{ i.id }}" tabindex="-1" role="dialog"
+                                     aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" >
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title"> 音乐会详情</h5>
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                        aria-label="Close"><span
+                                                        aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body" >
+                                                {{ i.info }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $('#exampleVaryingModalContent').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget) // Button that triggered the modal
+            var recipient = button.data('whatever') // Extract info from data-* attributes
+            // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+            // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+            var modal = $(this)
+            modal.find('.modal-title').text('New message to ' + recipient)
+            modal.find('.modal-body input').val(recipient)
+        });
+    </script>
+{% endblock %}

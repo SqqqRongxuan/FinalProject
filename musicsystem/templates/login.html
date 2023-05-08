@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pandora Music</title>
+    <base href="/">
+    <link rel="stylesheet" href="../static/css/reset.min.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+
+</head>
+<body>
+
+<section class="user">
+    <div class="user_options-container">
+        <div class="user_options-text">
+            <div class="user_options-unregistered">
+                <h2 class="user_unregistered-title">No Account</h2>
+                <p class="user_unregistered-text">Click the button to register.</p>
+                <button class="user_unregistered-signup" id="signup-button">Register</button>
+            </div>
+
+            <div class="user_options-registered">
+                <h2 class="user_registered-title"></h2>
+                <p class="user_registered-text">Have an account?</p>
+                <button class="user_registered-login" id="login-button">Login</button>
+            </div>
+        </div>
+
+        <div class="user_options-forms" id="user_options-forms">
+            <div class="user_forms-login">
+                <h2 class="forms_title">Login</h2>
+                <form id="login" class="forms_form" action="login" method="post">
+                    <fieldset class="forms_fieldset">
+                        <div class="forms_field">
+                            <input type="email" name="username" placeholder="emial" class="forms_field-input" required />
+                        </div>
+                        <div class="forms_field">
+                            <input type="password" name="password" placeholder="password" class="forms_field-input" required/>
+                        </div>
+                    </fieldset>
+                    <div class="forms_buttons">
+                        <input type="submit" value="Login" class="forms_buttons-action">
+                        <a href="adminlogin"> <input type="button" value="Administrator login" class="forms_buttons-action"></a>
+                    </div>
+                </form>
+            </div>
+            <div class="user_forms-signup">
+                <h2 class="forms_title">Register</h2>
+                <form class="forms_form" action="res" method="POST" id="res" >
+                    <fieldset class="forms_fieldset">
+                        <div class="forms_field">
+                            <input type="email" name="username" placeholder="email" class="forms_field-input" required/>
+                        </div>
+                        <div class="forms_field">
+                            <input type="password" name="password" placeholder="password" class="forms_field-input" required/>
+                        </div>
+                    </fieldset>
+                    <div class="forms_buttons">
+                        <input type="submit" value="注册" class="forms_buttons-action">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="../static/js/script.js"></script>
+<script src="../static/assets/js/jquery.min.js"></script>
+<script src="../static/js/jquery.form.js"></script>
+
+<script>
+    $("#login").ajaxForm(function (e){
+        var data = JSON.parse(e)
+        console.log(data)
+        if (data.info=='Successful Sign-in'){
+            alert(data.info)
+            location.href = 'userindex?id='+data.userid
+            localStorage.setItem('userid',data.userid)
+        }
+    })
+    $("#res").ajaxForm(function (e){
+        alert(e)
+        if (e=='Successful Sign-up'){
+            window.location.reload()
+        }
+    })
+</script>
+
+</body>
+</html>

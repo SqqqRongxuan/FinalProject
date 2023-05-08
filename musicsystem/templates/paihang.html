@@ -1,0 +1,1058 @@
+{% extends 'base.html' %}
+{% block wrapper %}
+    <!--page-wrapper-->
+    <div class="page-wrapper" style="margin-right: 180px;margin-top: 20px">
+        <div class="page-content-wrapper">
+            <div class="page-content">
+                <div class="row">
+                    <div class="col-12 col-lg-3">
+                            <div class="card radius-12">
+                                <div class="card-body">
+                                <h1>Popular</h1>
+                                    <hr/>
+                                {% for x in data %}
+                                    <ul class="list-group">
+                                        {% for i in x %}
+                                            {% if i.lx == "流行" %}
+                                            <li class="list-group-item"><a href="https://music.163.com/#/song?id={{ i.id }}"> Song name:{{ i.name }}
+                                                <br>Author:{{ i.zz }}<br>Comments:{{ i.pl }}<br>
+                                                {% if i.lx == "流行" %}
+                                                    Type: Popular
+                                                {% endif %}
+                                                {% if i.lx == "民谣" %}
+                                                    Type: Folk
+                                                {% endif %}
+                                                {% if i.lx == "摇滚" %}
+                                                    Type: Rock
+                                                {% endif %}
+                                                {% if i.lx == "古典" %}
+                                                    Type: Classical
+                                                {% endif %}
+                                                {% if i.lx == "轻音乐" %}
+                                                    Type: Light
+                                                {% endif %}
+                                                {% if i.lx == "舞曲" %}
+                                                    Type: Dance
+                                                {% endif %}
+                                                {% if i.lx == "说唱" %}
+                                                    Type: Rap
+                                                {% endif %}
+                                                {% if i.lx == "爵士" %}
+                                                    Type: Jazz
+                                                {% endif %}
+                                                {% if i.lx == "英伦" %}
+                                                    Type: England
+                                                {% endif %}
+                                                {% if i.lx == "蓝调" %}
+                                                    Type: Blues
+                                                {% endif %}
+                                                {% if i.lx == "民族" %}
+                                                    Type: Nation
+                                                {% endif %}
+                                                {% if i.lx == "拉丁" %}
+                                                    Type: Latin
+                                                {% endif %}
+                                                {% if i.lx == "世界音乐" %}
+                                                    Type: World
+                                                {% endif %}
+                                                {% if i.lx == "古风" %}
+                                                    Type: Ancient
+                                                {% endif %}
+                                                {% if i.lx == "雷鬼" %}
+                                                    Type: Reggae
+                                                {% endif %}
+                                                {% if i.lx == "电子" %}
+                                                    Type: Electron
+                                                {% endif %}
+                                                {% if i.lx == "R&B/Soul" %}
+                                                    Type: R&B/Soul
+                                                {% endif %}
+                                                {% if i.lx == "New Age" %}
+                                                    Type: New Age
+                                                {% endif %}
+                                                {% if i.lx == "Bossa Nova" %}
+                                                    Type: Bossa Nova
+                                                {% endif %}
+                                                </a>
+                                            </li>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </ul>
+                                {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    <div class="col-12 col-lg-3">
+                        <div class="card radius-12">
+                                <div class="card-body">
+                                <h1>Folk</h1>
+                                    <hr/>
+                                {% for x in data %}
+                                    <ul class="list-group">
+                                        {% for i in x %}
+                                            {% if i.lx == "民谣" %}
+                                            <li class="list-group-item"><a href="https://music.163.com/#/song?id={{ i.id }}"> Song name:{{ i.name }}
+                                                <br>Author:{{ i.zz }}<br>Comments:{{ i.pl }}<br>
+                                                {% if i.lx == "流行" %}
+                                                    Type: Popular
+                                                {% endif %}
+                                                {% if i.lx == "民谣" %}
+                                                    Type: Folk
+                                                {% endif %}
+                                                {% if i.lx == "摇滚" %}
+                                                    Type: Rock
+                                                {% endif %}
+                                                {% if i.lx == "古典" %}
+                                                    Type: Classical
+                                                {% endif %}
+                                                {% if i.lx == "轻音乐" %}
+                                                    Type: Light
+                                                {% endif %}
+                                                {% if i.lx == "舞曲" %}
+                                                    Type: Dance
+                                                {% endif %}
+                                                {% if i.lx == "说唱" %}
+                                                    Type: Rap
+                                                {% endif %}
+                                                {% if i.lx == "爵士" %}
+                                                    Type: Jazz
+                                                {% endif %}
+                                                {% if i.lx == "英伦" %}
+                                                    Type: England
+                                                {% endif %}
+                                                {% if i.lx == "蓝调" %}
+                                                    Type: Blues
+                                                {% endif %}
+                                                {% if i.lx == "民族" %}
+                                                    Type: Nation
+                                                {% endif %}
+                                                {% if i.lx == "拉丁" %}
+                                                    Type: Latin
+                                                {% endif %}
+                                                {% if i.lx == "世界音乐" %}
+                                                    Type: World
+                                                {% endif %}
+                                                {% if i.lx == "古风" %}
+                                                    Type: Ancient
+                                                {% endif %}
+                                                {% if i.lx == "雷鬼" %}
+                                                    Type: Reggae
+                                                {% endif %}
+                                                {% if i.lx == "电子" %}
+                                                    Type: Electron
+                                                {% endif %}
+                                                {% if i.lx == "R&B/Soul" %}
+                                                    Type: R&B/Soul
+                                                {% endif %}
+                                                {% if i.lx == "New Age" %}
+                                                    Type: New Age
+                                                {% endif %}
+                                                {% if i.lx == "Bossa Nova" %}
+                                                    Type: Bossa Nova
+                                                {% endif %}
+                                                </a>
+                                            </li>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </ul>
+                                {% endfor %}
+                                </div>
+                            </div>
+                     </div>
+                    <div class="col-12 col-lg-3">
+                        <div class="card radius-12">
+                                <div class="card-body">
+                                <h1>Rock</h1>
+                                    <hr/>
+                                {% for x in data %}
+                                    <ul class="list-group">
+                                        {% for i in x %}
+                                            {% if i.lx == "摇滚" %}
+                                            <li class="list-group-item"><a href="https://music.163.com/#/song?id={{ i.id }}"> Song name:{{ i.name }}
+                                                <br>Author:{{ i.zz }}<br>Comments:{{ i.pl }}<br>
+                                                {% if i.lx == "流行" %}
+                                                    Type: Popular
+                                                {% endif %}
+                                                {% if i.lx == "民谣" %}
+                                                    Type: Folk
+                                                {% endif %}
+                                                {% if i.lx == "摇滚" %}
+                                                    Type: Rock
+                                                {% endif %}
+                                                {% if i.lx == "古典" %}
+                                                    Type: Classical
+                                                {% endif %}
+                                                {% if i.lx == "轻音乐" %}
+                                                    Type: Light
+                                                {% endif %}
+                                                {% if i.lx == "舞曲" %}
+                                                    Type: Dance
+                                                {% endif %}
+                                                {% if i.lx == "说唱" %}
+                                                    Type: Rap
+                                                {% endif %}
+                                                {% if i.lx == "爵士" %}
+                                                    Type: Jazz
+                                                {% endif %}
+                                                {% if i.lx == "英伦" %}
+                                                    Type: England
+                                                {% endif %}
+                                                {% if i.lx == "蓝调" %}
+                                                    Type: Blues
+                                                {% endif %}
+                                                {% if i.lx == "民族" %}
+                                                    Type: Nation
+                                                {% endif %}
+                                                {% if i.lx == "拉丁" %}
+                                                    Type: Latin
+                                                {% endif %}
+                                                {% if i.lx == "世界音乐" %}
+                                                    Type: World
+                                                {% endif %}
+                                                {% if i.lx == "古风" %}
+                                                    Type: Ancient
+                                                {% endif %}
+                                                {% if i.lx == "雷鬼" %}
+                                                    Type: Reggae
+                                                {% endif %}
+                                                {% if i.lx == "电子" %}
+                                                    Type: Electron
+                                                {% endif %}
+                                                {% if i.lx == "R&B/Soul" %}
+                                                    Type: R&B/Soul
+                                                {% endif %}
+                                                {% if i.lx == "New Age" %}
+                                                    Type: New Age
+                                                {% endif %}
+                                                {% if i.lx == "Bossa Nova" %}
+                                                    Type: Bossa Nova
+                                                {% endif %}
+                                                </a>
+                                            </li>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </ul>
+                                {% endfor %}
+                                </div>
+                            </div>
+            </div>
+                    <div class="col-12 col-lg-3">
+                            <div class="card radius-12">
+                                <div class="card-body">
+                                <h1>Classical</h1>
+                                    <hr/>
+                                {% for x in data %}
+                                    <ul class="list-group">
+                                        {% for i in x %}
+                                            {% if i.lx == "古典" %}
+                                            <li class="list-group-item"><a href="https://music.163.com/#/song?id={{ i.id }}"> Song name:{{ i.name }}
+                                                <br>Author:{{ i.zz }}<br>Comments:{{ i.pl }}<br>
+                                                {% if i.lx == "流行" %}
+                                                    Type: Popular
+                                                {% endif %}
+                                                {% if i.lx == "民谣" %}
+                                                    Type: Folk
+                                                {% endif %}
+                                                {% if i.lx == "摇滚" %}
+                                                    Type: Rock
+                                                {% endif %}
+                                                {% if i.lx == "古典" %}
+                                                    Type: Classical
+                                                {% endif %}
+                                                {% if i.lx == "轻音乐" %}
+                                                    Type: Light
+                                                {% endif %}
+                                                {% if i.lx == "舞曲" %}
+                                                    Type: Dance
+                                                {% endif %}
+                                                {% if i.lx == "说唱" %}
+                                                    Type: Rap
+                                                {% endif %}
+                                                {% if i.lx == "爵士" %}
+                                                    Type: Jazz
+                                                {% endif %}
+                                                {% if i.lx == "英伦" %}
+                                                    Type: England
+                                                {% endif %}
+                                                {% if i.lx == "蓝调" %}
+                                                    Type: Blues
+                                                {% endif %}
+                                                {% if i.lx == "民族" %}
+                                                    Type: Nation
+                                                {% endif %}
+                                                {% if i.lx == "拉丁" %}
+                                                    Type: Latin
+                                                {% endif %}
+                                                {% if i.lx == "世界音乐" %}
+                                                    Type: World
+                                                {% endif %}
+                                                {% if i.lx == "古风" %}
+                                                    Type: Ancient
+                                                {% endif %}
+                                                {% if i.lx == "雷鬼" %}
+                                                    Type: Reggae
+                                                {% endif %}
+                                                {% if i.lx == "电子" %}
+                                                    Type: Electron
+                                                {% endif %}
+                                                {% if i.lx == "R&B/Soul" %}
+                                                    Type: R&B/Soul
+                                                {% endif %}
+                                                {% if i.lx == "New Age" %}
+                                                    Type: New Age
+                                                {% endif %}
+                                                {% if i.lx == "Bossa Nova" %}
+                                                    Type: Bossa Nova
+                                                {% endif %}
+                                                </a>
+                                            </li>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </ul>
+                                {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    <div class="col-12 col-lg-3">
+                        <div class="card radius-12">
+                                <div class="card-body">
+                                <h1>Light</h1>
+                                    <hr/>
+                                {% for x in data %}
+                                    <ul class="list-group">
+                                        {% for i in x %}
+                                            {% if i.lx == "轻音乐" %}
+                                            <li class="list-group-item"><a href="https://music.163.com/#/song?id={{ i.id }}"> Song name:{{ i.name }}
+                                                <br>Author:{{ i.zz }}<br>Comments:{{ i.pl }}<br>
+                                                {% if i.lx == "流行" %}
+                                                    Type: Popular
+                                                {% endif %}
+                                                {% if i.lx == "民谣" %}
+                                                    Type: Folk
+                                                {% endif %}
+                                                {% if i.lx == "摇滚" %}
+                                                    Type: Rock
+                                                {% endif %}
+                                                {% if i.lx == "古典" %}
+                                                    Type: Classical
+                                                {% endif %}
+                                                {% if i.lx == "轻音乐" %}
+                                                    Type: Light
+                                                {% endif %}
+                                                {% if i.lx == "舞曲" %}
+                                                    Type: Dance
+                                                {% endif %}
+                                                {% if i.lx == "说唱" %}
+                                                    Type: Rap
+                                                {% endif %}
+                                                {% if i.lx == "爵士" %}
+                                                    Type: Jazz
+                                                {% endif %}
+                                                {% if i.lx == "英伦" %}
+                                                    Type: England
+                                                {% endif %}
+                                                {% if i.lx == "蓝调" %}
+                                                    Type: Blues
+                                                {% endif %}
+                                                {% if i.lx == "民族" %}
+                                                    Type: Nation
+                                                {% endif %}
+                                                {% if i.lx == "拉丁" %}
+                                                    Type: Latin
+                                                {% endif %}
+                                                {% if i.lx == "世界音乐" %}
+                                                    Type: World
+                                                {% endif %}
+                                                {% if i.lx == "古风" %}
+                                                    Type: Ancient
+                                                {% endif %}
+                                                {% if i.lx == "雷鬼" %}
+                                                    Type: Reggae
+                                                {% endif %}
+                                                {% if i.lx == "电子" %}
+                                                    Type: Electron
+                                                {% endif %}
+                                                {% if i.lx == "R&B/Soul" %}
+                                                    Type: R&B/Soul
+                                                {% endif %}
+                                                {% if i.lx == "New Age" %}
+                                                    Type: New Age
+                                                {% endif %}
+                                                {% if i.lx == "Bossa Nova" %}
+                                                    Type: Bossa Nova
+                                                {% endif %}
+                                                </a>
+                                            </li>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </ul>
+                                {% endfor %}
+                                </div>
+                            </div>
+                     </div>
+                    <div class="col-12 col-lg-3">
+                        <div class="card radius-12">
+                                <div class="card-body">
+                                <h1>Dance</h1>
+                                    <hr/>
+                                {% for x in data %}
+                                    <ul class="list-group">
+                                        {% for i in x %}
+                                            {% if i.lx == "舞曲" %}
+                                            <li class="list-group-item"><a href="https://music.163.com/#/song?id={{ i.id }}"> Song name:{{ i.name }}
+                                                <br>Author:{{ i.zz }}<br>Comments:{{ i.pl }}<br>
+                                                {% if i.lx == "流行" %}
+                                                    Type: Popular
+                                                {% endif %}
+                                                {% if i.lx == "民谣" %}
+                                                    Type: Folk
+                                                {% endif %}
+                                                {% if i.lx == "摇滚" %}
+                                                    Type: Rock
+                                                {% endif %}
+                                                {% if i.lx == "古典" %}
+                                                    Type: Classical
+                                                {% endif %}
+                                                {% if i.lx == "轻音乐" %}
+                                                    Type: Light
+                                                {% endif %}
+                                                {% if i.lx == "舞曲" %}
+                                                    Type: Dance
+                                                {% endif %}
+                                                {% if i.lx == "说唱" %}
+                                                    Type: Rap
+                                                {% endif %}
+                                                {% if i.lx == "爵士" %}
+                                                    Type: Jazz
+                                                {% endif %}
+                                                {% if i.lx == "英伦" %}
+                                                    Type: England
+                                                {% endif %}
+                                                {% if i.lx == "蓝调" %}
+                                                    Type: Blues
+                                                {% endif %}
+                                                {% if i.lx == "民族" %}
+                                                    Type: Nation
+                                                {% endif %}
+                                                {% if i.lx == "拉丁" %}
+                                                    Type: Latin
+                                                {% endif %}
+                                                {% if i.lx == "世界音乐" %}
+                                                    Type: World
+                                                {% endif %}
+                                                {% if i.lx == "古风" %}
+                                                    Type: Ancient
+                                                {% endif %}
+                                                {% if i.lx == "雷鬼" %}
+                                                    Type: Reggae
+                                                {% endif %}
+                                                {% if i.lx == "电子" %}
+                                                    Type: Electron
+                                                {% endif %}
+                                                {% if i.lx == "R&B/Soul" %}
+                                                    Type: R&B/Soul
+                                                {% endif %}
+                                                {% if i.lx == "New Age" %}
+                                                    Type: New Age
+                                                {% endif %}
+                                                {% if i.lx == "Bossa Nova" %}
+                                                    Type: Bossa Nova
+                                                {% endif %}
+                                                </a>
+                                            </li>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </ul>
+                                {% endfor %}
+                                </div>
+                            </div>
+            </div>
+                    <div class="col-12 col-lg-3">
+                            <div class="card radius-12">
+                                <div class="card-body">
+                                <h1>Rap</h1>
+                                    <hr/>
+                                {% for x in data %}
+                                    <ul class="list-group">
+                                        {% for i in x %}
+                                            {% if i.lx == "说唱" %}
+                                            <li class="list-group-item"><a href="https://music.163.com/#/song?id={{ i.id }}"> Song name:{{ i.name }}
+                                                <br>Author:{{ i.zz }}<br>Comments:{{ i.pl }}<br>
+                                                {% if i.lx == "流行" %}
+                                                    Type: Popular
+                                                {% endif %}
+                                                {% if i.lx == "民谣" %}
+                                                    Type: Folk
+                                                {% endif %}
+                                                {% if i.lx == "摇滚" %}
+                                                    Type: Rock
+                                                {% endif %}
+                                                {% if i.lx == "古典" %}
+                                                    Type: Classical
+                                                {% endif %}
+                                                {% if i.lx == "轻音乐" %}
+                                                    Type: Light
+                                                {% endif %}
+                                                {% if i.lx == "舞曲" %}
+                                                    Type: Dance
+                                                {% endif %}
+                                                {% if i.lx == "说唱" %}
+                                                    Type: Rap
+                                                {% endif %}
+                                                {% if i.lx == "爵士" %}
+                                                    Type: Jazz
+                                                {% endif %}
+                                                {% if i.lx == "英伦" %}
+                                                    Type: England
+                                                {% endif %}
+                                                {% if i.lx == "蓝调" %}
+                                                    Type: Blues
+                                                {% endif %}
+                                                {% if i.lx == "民族" %}
+                                                    Type: Nation
+                                                {% endif %}
+                                                {% if i.lx == "拉丁" %}
+                                                    Type: Latin
+                                                {% endif %}
+                                                {% if i.lx == "世界音乐" %}
+                                                    Type: World
+                                                {% endif %}
+                                                {% if i.lx == "古风" %}
+                                                    Type: Ancient
+                                                {% endif %}
+                                                {% if i.lx == "雷鬼" %}
+                                                    Type: Reggae
+                                                {% endif %}
+                                                {% if i.lx == "电子" %}
+                                                    Type: Electron
+                                                {% endif %}
+                                                {% if i.lx == "R&B/Soul" %}
+                                                    Type: R&B/Soul
+                                                {% endif %}
+                                                {% if i.lx == "New Age" %}
+                                                    Type: New Age
+                                                {% endif %}
+                                                {% if i.lx == "Bossa Nova" %}
+                                                    Type: Bossa Nova
+                                                {% endif %}
+                                                </a>
+                                            </li>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </ul>
+                                {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    <div class="col-12 col-lg-3">
+                        <div class="card radius-12">
+                                <div class="card-body">
+                                <h1>Jazz</h1>
+                                    <hr/>
+                                {% for x in data %}
+                                    <ul class="list-group">
+                                        {% for i in x %}
+                                            {% if i.lx == "爵士" %}
+                                            <li class="list-group-item"><a href="https://music.163.com/#/song?id={{ i.id }}"> Song name:{{ i.name }}
+                                                <br>Author:{{ i.zz }}<br>Comments:{{ i.pl }}<br>
+                                                {% if i.lx == "流行" %}
+                                                    Type: Popular
+                                                {% endif %}
+                                                {% if i.lx == "民谣" %}
+                                                    Type: Folk
+                                                {% endif %}
+                                                {% if i.lx == "摇滚" %}
+                                                    Type: Rock
+                                                {% endif %}
+                                                {% if i.lx == "古典" %}
+                                                    Type: Classical
+                                                {% endif %}
+                                                {% if i.lx == "轻音乐" %}
+                                                    Type: Light
+                                                {% endif %}
+                                                {% if i.lx == "舞曲" %}
+                                                    Type: Dance
+                                                {% endif %}
+                                                {% if i.lx == "说唱" %}
+                                                    Type: Rap
+                                                {% endif %}
+                                                {% if i.lx == "爵士" %}
+                                                    Type: Jazz
+                                                {% endif %}
+                                                {% if i.lx == "英伦" %}
+                                                    Type: England
+                                                {% endif %}
+                                                {% if i.lx == "蓝调" %}
+                                                    Type: Blues
+                                                {% endif %}
+                                                {% if i.lx == "民族" %}
+                                                    Type: Nation
+                                                {% endif %}
+                                                {% if i.lx == "拉丁" %}
+                                                    Type: Latin
+                                                {% endif %}
+                                                {% if i.lx == "世界音乐" %}
+                                                    Type: World
+                                                {% endif %}
+                                                {% if i.lx == "古风" %}
+                                                    Type: Ancient
+                                                {% endif %}
+                                                {% if i.lx == "雷鬼" %}
+                                                    Type: Reggae
+                                                {% endif %}
+                                                {% if i.lx == "电子" %}
+                                                    Type: Electron
+                                                {% endif %}
+                                                {% if i.lx == "R&B/Soul" %}
+                                                    Type: R&B/Soul
+                                                {% endif %}
+                                                {% if i.lx == "New Age" %}
+                                                    Type: New Age
+                                                {% endif %}
+                                                {% if i.lx == "Bossa Nova" %}
+                                                    Type: Bossa Nova
+                                                {% endif %}
+                                                </a>
+                                            </li>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </ul>
+                                {% endfor %}
+                                </div>
+                            </div>
+                     </div>
+                    <div class="col-12 col-lg-3">
+                        <div class="card radius-12">
+                                <div class="card-body">
+                                <h1>England</h1>
+                                    <hr/>
+                                {% for x in data %}
+                                    <ul class="list-group">
+                                        {% for i in x %}
+                                            {% if i.lx == "英伦" %}
+                                            <li class="list-group-item"><a href="https://music.163.com/#/song?id={{ i.id }}"> Song name:{{ i.name }}
+                                                <br>Author:{{ i.zz }}<br>Comments:{{ i.pl }}<br>
+                                                {% if i.lx == "英伦" %}
+                                                    Type: England
+                                                {% endif %}
+                                                {% if i.lx == "蓝调" %}
+                                                    Type: Blues
+                                                {% endif %}
+                                                {% if i.lx == "民族" %}
+                                                    Type: Nation
+                                                {% endif %}
+                                                {% if i.lx == "拉丁" %}
+                                                    Type: Latin
+                                                {% endif %}
+                                                {% if i.lx == "世界音乐" %}
+                                                    Type: World
+                                                {% endif %}
+                                                {% if i.lx == "古风" %}
+                                                    Type: Ancient
+                                                {% endif %}
+                                                {% if i.lx == "雷鬼" %}
+                                                    Type: Reggae
+                                                {% endif %}
+                                                {% if i.lx == "电子" %}
+                                                    Type: Electron
+                                                {% endif %}
+                                                {% if i.lx == "R&B/Soul" %}
+                                                    Type: R&B/Soul
+                                                {% endif %}
+                                                {% if i.lx == "New Age" %}
+                                                    Type: New Age
+                                                {% endif %}
+                                                {% if i.lx == "Bossa Nova" %}
+                                                    Type: Bossa Nova
+                                                {% endif %}
+                                                </a>
+                                            </li>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </ul>
+                                {% endfor %}
+                                </div>
+                            </div>
+            </div>
+                    <div class="col-12 col-lg-3">
+                            <div class="card radius-12">
+                                <div class="card-body">
+                                <h1>Blues</h1>
+                                    <hr/>
+                                {% for x in data %}
+                                    <ul class="list-group">
+                                        {% for i in x %}
+                                            {% if i.lx == "蓝调" %}
+                                            <li class="list-group-item"><a href="https://music.163.com/#/song?id={{ i.id }}"> Song name:{{ i.name }}
+                                                <br>Author:{{ i.zz }}<br>Comments:{{ i.pl }}<br>
+                                                {% if i.lx == "蓝调" %}
+                                                    Type: Blues
+                                                {% endif %}
+                                                {% if i.lx == "民族" %}
+                                                    Type: Nation
+                                                {% endif %}
+                                                {% if i.lx == "拉丁" %}
+                                                    Type: Latin
+                                                {% endif %}
+                                                {% if i.lx == "世界音乐" %}
+                                                    Type: World
+                                                {% endif %}
+                                                {% if i.lx == "古风" %}
+                                                    Type: Ancient
+                                                {% endif %}
+                                                {% if i.lx == "雷鬼" %}
+                                                    Type: Reggae
+                                                {% endif %}
+                                                {% if i.lx == "电子" %}
+                                                    Type: Electron
+                                                {% endif %}
+                                                {% if i.lx == "R&B/Soul" %}
+                                                    Type: R&B/Soul
+                                                {% endif %}
+                                                {% if i.lx == "New Age" %}
+                                                    Type: New Age
+                                                {% endif %}
+                                                {% if i.lx == "Bossa Nova" %}
+                                                    Type: Bossa Nova
+                                                {% endif %}
+                                                </a>
+                                            </li>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </ul>
+                                {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    <div class="col-12 col-lg-3">
+                        <div class="card radius-12">
+                                <div class="card-body">
+                                <h1>Nation</h1>
+                                    <hr/>
+                                {% for x in data %}
+                                    <ul class="list-group">
+                                        {% for i in x %}
+                                            {% if i.lx == "民族" %}
+                                            <li class="list-group-item"><a href="https://music.163.com/#/song?id={{ i.id }}"> Song name:{{ i.name }}
+                                                <br>Author:{{ i.zz }}<br>Comments:{{ i.pl }}<br>
+                                                {% if i.lx == "民族" %}
+                                                    Type: Nation
+                                                {% endif %}
+                                                {% if i.lx == "拉丁" %}
+                                                    Type: Latin
+                                                {% endif %}
+                                                {% if i.lx == "世界音乐" %}
+                                                    Type: World
+                                                {% endif %}
+                                                {% if i.lx == "古风" %}
+                                                    Type: Ancient
+                                                {% endif %}
+                                                {% if i.lx == "雷鬼" %}
+                                                    Type: Reggae
+                                                {% endif %}
+                                                {% if i.lx == "电子" %}
+                                                    Type: Electron
+                                                {% endif %}
+                                                {% if i.lx == "R&B/Soul" %}
+                                                    Type: R&B/Soul
+                                                {% endif %}
+                                                {% if i.lx == "New Age" %}
+                                                    Type: New Age
+                                                {% endif %}
+                                                {% if i.lx == "Bossa Nova" %}
+                                                    Type: Bossa Nova
+                                                {% endif %}
+                                                </a>
+                                            </li>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </ul>
+                                {% endfor %}
+                                </div>
+                            </div>
+                     </div>
+                    <div class="col-12 col-lg-3">
+                        <div class="card radius-12">
+                                <div class="card-body">
+                                <h1>Latin</h1>
+                                    <hr/>
+                                {% for x in data %}
+                                    <ul class="list-group">
+                                        {% for i in x %}
+                                            {% if i.lx == "拉丁" %}
+                                            <li class="list-group-item"><a href="https://music.163.com/#/song?id={{ i.id }}"> Song name:{{ i.name }}
+                                                <br>Author:{{ i.zz }}<br>Comments:{{ i.pl }}<br>
+                                                {% if i.lx == "拉丁" %}
+                                                    Type: Latin
+                                                {% endif %}
+                                                {% if i.lx == "世界音乐" %}
+                                                    Type: World
+                                                {% endif %}
+                                                {% if i.lx == "古风" %}
+                                                    Type: Ancient
+                                                {% endif %}
+                                                {% if i.lx == "雷鬼" %}
+                                                    Type: Reggae
+                                                {% endif %}
+                                                {% if i.lx == "电子" %}
+                                                    Type: Electron
+                                                {% endif %}
+                                                {% if i.lx == "R&B/Soul" %}
+                                                    Type: R&B/Soul
+                                                {% endif %}
+                                                {% if i.lx == "New Age" %}
+                                                    Type: New Age
+                                                {% endif %}
+                                                {% if i.lx == "Bossa Nova" %}
+                                                    Type: Bossa Nova
+                                                {% endif %}
+                                                </a>
+                                            </li>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </ul>
+                                {% endfor %}
+                                </div>
+                            </div>
+            </div>
+                    <div class="col-12 col-lg-3">
+                        <div class="card radius-12">
+                                <div class="card-body">
+                                <h1>World</h1>
+                                    <hr/>
+                                {% for x in data %}
+                                    <ul class="list-group">
+                                        {% for i in x %}
+                                            {% if i.lx == "世界音乐" %}
+                                            <li class="list-group-item"><a href="https://music.163.com/#/song?id={{ i.id }}"> Song name:{{ i.name }}
+                                                <br>Author:{{ i.zz }}<br>Comments:{{ i.pl }}<br>
+                                                {% if i.lx == "世界音乐" %}
+                                                    Type: World
+                                                {% endif %}
+                                                {% if i.lx == "古风" %}
+                                                    Type: Ancient
+                                                {% endif %}
+                                                {% if i.lx == "雷鬼" %}
+                                                    Type: Reggae
+                                                {% endif %}
+                                                {% if i.lx == "电子" %}
+                                                    Type: Electron
+                                                {% endif %}
+                                                {% if i.lx == "R&B/Soul" %}
+                                                    Type: R&B/Soul
+                                                {% endif %}
+                                                {% if i.lx == "New Age" %}
+                                                    Type: New Age
+                                                {% endif %}
+                                                {% if i.lx == "Bossa Nova" %}
+                                                    Type: Bossa Nova
+                                                {% endif %}
+                                                </a>
+                                            </li>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </ul>
+                                {% endfor %}
+                                </div>
+                            </div>
+            </div>
+                    <div class="col-12 col-lg-3">
+                        <div class="card radius-12">
+                                <div class="card-body">
+                                <h1>Ancient</h1>
+                                    <hr/>
+                                {% for x in data %}
+                                    <ul class="list-group">
+                                        {% for i in x %}
+                                            {% if i.lx == "古风" %}
+                                            <li class="list-group-item"><a href="https://music.163.com/#/song?id={{ i.id }}"> Song name:{{ i.name }}
+                                                <br>Author:{{ i.zz }}<br>Comments:{{ i.pl }}<br>
+                                                {% if i.lx == "古风" %}
+                                                    Type: Ancient
+                                                {% endif %}
+                                                {% if i.lx == "雷鬼" %}
+                                                    Type: Reggae
+                                                {% endif %}
+                                                {% if i.lx == "电子" %}
+                                                    Type: Electron
+                                                {% endif %}
+                                                {% if i.lx == "R&B/Soul" %}
+                                                    Type: R&B/Soul
+                                                {% endif %}
+                                                {% if i.lx == "New Age" %}
+                                                    Type: New Age
+                                                {% endif %}
+                                                {% if i.lx == "Bossa Nova" %}
+                                                    Type: Bossa Nova
+                                                {% endif %}
+                                                </a>
+                                            </li>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </ul>
+                                {% endfor %}
+                                </div>
+                            </div>
+            </div>
+                    <div class="col-12 col-lg-3">
+                        <div class="card radius-12">
+                                <div class="card-body">
+                                <h1>Reggae</h1>
+                                    <hr/>
+                                {% for x in data %}
+                                    <ul class="list-group">
+                                        {% for i in x %}
+                                            {% if i.lx == "雷鬼" %}
+                                            <li class="list-group-item"><a href="https://music.163.com/#/song?id={{ i.id }}"> Song name:{{ i.name }}
+                                                <br>Author:{{ i.zz }}<br>Comments:{{ i.pl }}<br>
+                                                {% if i.lx == "雷鬼" %}
+                                                    Type: Reggae
+                                                {% endif %}
+                                                {% if i.lx == "电子" %}
+                                                    Type: Electron
+                                                {% endif %}
+                                                {% if i.lx == "R&B/Soul" %}
+                                                    Type: R&B/Soul
+                                                {% endif %}
+                                                {% if i.lx == "New Age" %}
+                                                    Type: New Age
+                                                {% endif %}
+                                                {% if i.lx == "Bossa Nova" %}
+                                                    Type: Bossa Nova
+                                                {% endif %}
+                                                </a>
+                                            </li>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </ul>
+                                {% endfor %}
+                                </div>
+                            </div>
+            </div>
+                    <div class="col-12 col-lg-3">
+                        <div class="card radius-12">
+                                <div class="card-body">
+                                <h1>Electron</h1>
+                                    <hr/>
+                                {% for x in data %}
+                                    <ul class="list-group">
+                                        {% for i in x %}
+                                            {% if i.lx == "电子" %}
+                                            <li class="list-group-item"><a href="https://music.163.com/#/song?id={{ i.id }}"> Song name:{{ i.name }}
+                                                <br>Author:{{ i.zz }}<br>Comments:{{ i.pl }}<br>
+                                                {% if i.lx == "电子" %}
+                                                    Type: Electron
+                                                {% endif %}
+                                                {% if i.lx == "R&B/Soul" %}
+                                                    Type: R&B/Soul
+                                                {% endif %}
+                                                {% if i.lx == "New Age" %}
+                                                    Type: New Age
+                                                {% endif %}
+                                                {% if i.lx == "Bossa Nova" %}
+                                                    Type: Bossa Nova
+                                                {% endif %}
+                                                </a>
+                                            </li>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </ul>
+                                {% endfor %}
+                                </div>
+                            </div>
+            </div>
+                    <div class="col-12 col-lg-3">
+                        <div class="card radius-12">
+                                <div class="card-body">
+                                <h1>R&B/Soul</h1>
+                                    <hr/>
+                                {% for x in data %}
+                                    <ul class="list-group">
+                                        {% for i in x %}
+                                            {% if i.lx == "R&B/Soul" %}
+                                            <li class="list-group-item"><a href="https://music.163.com/#/song?id={{ i.id }}"> Song name:{{ i.name }}
+                                                <br>Author:{{ i.zz }}<br>Comments:{{ i.pl }}<br>
+                                                {% if i.lx == "R&B/Soul" %}
+                                                    Type: R&B/Soul
+                                                {% endif %}
+                                                {% if i.lx == "New Age" %}
+                                                    Type: New Age
+                                                {% endif %}
+                                                {% if i.lx == "Bossa Nova" %}
+                                                    Type: Bossa Nova
+                                                {% endif %}
+                                                </a>
+                                            </li>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </ul>
+                                {% endfor %}
+                                </div>
+                            </div>
+            </div>
+                    <div class="col-12 col-lg-3">
+                        <div class="card radius-12">
+                                <div class="card-body">
+                                <h1>New Age</h1>
+                                    <hr/>
+                                {% for x in data %}
+                                    <ul class="list-group">
+                                        {% for i in x %}
+                                            {% if i.lx == "New Age" %}
+                                            <li class="list-group-item"><a href="https://music.163.com/#/song?id={{ i.id }}"> Song name:{{ i.name }}
+                                                <br>Author:{{ i.zz }}<br>Comments:{{ i.pl }}<br>
+                                                {% if i.lx == "New Age" %}
+                                                    Type: New Age
+                                                {% endif %}
+                                                {% if i.lx == "Bossa Nova" %}
+                                                    Type: Bossa Nova
+                                                {% endif %}
+                                                </a>
+                                            </li>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </ul>
+                                {% endfor %}
+                                </div>
+                            </div>
+            </div>
+                    <div class="col-12 col-lg-3">
+                        <div class="card radius-12">
+                                <div class="card-body">
+                                <h1>Bossa Nova</h1>
+                                    <hr/>
+                                {% for x in data %}
+                                    <ul class="list-group">
+                                        {% for i in x %}
+                                            {% if i.lx == "Bossa Nova" %}
+                                            <li class="list-group-item"><a href="https://music.163.com/#/song?id={{ i.id }}"> Song name:{{ i.name }}
+                                                <br>Author:{{ i.zz }}<br>Comments:{{ i.pl }}<br>
+                                                {% if i.lx == "Bossa Nova" %}
+                                                    Type: Bossa Nova
+                                                {% endif %}
+                                                </a>
+                                            </li>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </ul>
+                                {% endfor %}
+                                </div>
+                            </div>
+            </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end page-wrapper-->
+
+    <script src="../static/assets/js/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
+    <script src="../static/assets/js/jquery.min.js"></script>
+    <script src="../static/assets/js/popper.min.js"></script>
+    <script src="../static/assets/js/bootstrap.min.js"></script>
+    <!--plugins-->
+    <script src="../static/assets/plugins/simplebar/js/simplebar.min.js"></script>
+    <script src="../static/assets/plugins/metismenu/js/metisMenu.min.js"></script>
+    <script src="../static/assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
+    <script src="../static/assets/js/app.js"></script>
+{% endblock %}

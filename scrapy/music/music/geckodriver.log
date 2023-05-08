@@ -1,0 +1,76 @@
+1646889821213	geckodriver	INFO	Listening on 127.0.0.1:49257
+1646889824237	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "49258" "-no-remote" "-profile" "C:\\Users\\Administrator\\AppData\\Local\\Temp\\rust_mozprofileS9y6B8"
+1646889824399	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Administrator\\AppData\\Local\\Temp\\rust_mozprofileS9y6B8\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:49258/devtools/browser/ab0fc36a-fe88-4f1e-9126-dd1f07bf4f0f
+1646889825598	Marionette	INFO	Listening on port 49263
+1646889825766	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://s3.music.126.net/web/s/core_109a4c4e18e967b5ea413dbe39425ae8.js?109a4c4e18e967b5ea413dbe39425ae8, line 96: unreachable code after return statement
+JavaScript warning: https://s3.music.126.net/web/s/core_109a4c4e18e967b5ea413dbe39425ae8.js?109a4c4e18e967b5ea413dbe39425ae8, line 96: unreachable code after return statement
+1646889828447	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+JavaScript warning: https://s3.music.126.net/web/s/core_109a4c4e18e967b5ea413dbe39425ae8.js?109a4c4e18e967b5ea413dbe39425ae8, line 96: unreachable code after return statement
+JavaScript warning: https://s3.music.126.net/web/s/core_109a4c4e18e967b5ea413dbe39425ae8.js?109a4c4e18e967b5ea413dbe39425ae8, line 96: unreachable code after return statement
+1646889840771	Marionette	INFO	Stopped listening on port 49263
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+JavaScript error: chrome://remote/content/marionette/cert.js, line 55: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsICertOverrideService.setDisableAllSecurityChecksAndLetAttackersInterceptMyData]
+1646890183371	geckodriver	INFO	Listening on 127.0.0.1:49433
+1646890186390	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "49434" "-no-remote" "-profile" "C:\\Users\\Administrator\\AppData\\Local\\Temp\\rust_mozprofilemTm9Et"
+1646890186543	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Administrator\\AppData\\Local\\Temp\\rust_mozprofilemTm9Et\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:49434/devtools/browser/b8514f4b-b1e4-4d02-bc7c-015a22a3cc66
+1646890187712	Marionette	INFO	Listening on port 49439
+1646890187917	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://s3.music.126.net/web/s/core_109a4c4e18e967b5ea413dbe39425ae8.js?109a4c4e18e967b5ea413dbe39425ae8, line 96: unreachable code after return statement
+JavaScript warning: https://s3.music.126.net/web/s/core_109a4c4e18e967b5ea413dbe39425ae8.js?109a4c4e18e967b5ea413dbe39425ae8, line 96: unreachable code after return statement
+1646890190816	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+JavaScript warning: https://s3.music.126.net/web/s/core_109a4c4e18e967b5ea413dbe39425ae8.js?109a4c4e18e967b5ea413dbe39425ae8, line 96: unreachable code after return statement
+JavaScript warning: https://s3.music.126.net/web/s/core_109a4c4e18e967b5ea413dbe39425ae8.js?109a4c4e18e967b5ea413dbe39425ae8, line 96: unreachable code after return statement
+1646890243176	geckodriver	INFO	Listening on 127.0.0.1:49542
+1646890246181	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "49543" "-no-remote" "-profile" "C:\\Users\\Administrator\\AppData\\Local\\Temp\\rust_mozprofile1iqF3Q"
+1646890246342	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Administrator\\AppData\\Local\\Temp\\rust_mozprofile1iqF3Q\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:49543/devtools/browser/e03f2080-80e7-40c7-8bca-934eeec9ad67
+1646890247448	Marionette	INFO	Listening on port 49548
+1646890247704	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://s3.music.126.net/web/s/core_109a4c4e18e967b5ea413dbe39425ae8.js?109a4c4e18e967b5ea413dbe39425ae8, line 96: unreachable code after return statement
+JavaScript warning: https://s3.music.126.net/web/s/core_109a4c4e18e967b5ea413dbe39425ae8.js?109a4c4e18e967b5ea413dbe39425ae8, line 96: unreachable code after return statement
+1646890250260	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+JavaScript warning: https://s3.music.126.net/web/s/core_109a4c4e18e967b5ea413dbe39425ae8.js?109a4c4e18e967b5ea413dbe39425ae8, line 96: unreachable code after return statement
+JavaScript warning: https://s3.music.126.net/web/s/core_109a4c4e18e967b5ea413dbe39425ae8.js?109a4c4e18e967b5ea413dbe39425ae8, line 96: unreachable code after return statement
+1646890272164	geckodriver	INFO	Listening on 127.0.0.1:49681
+1646890275183	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "49682" "-no-remote" "-profile" "C:\\Users\\Administrator\\AppData\\Local\\Temp\\rust_mozprofilevWHmiV"
+1646890275336	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Administrator\\AppData\\Local\\Temp\\rust_mozprofilevWHmiV\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:49682/devtools/browser/0e215577-1a55-4405-b67b-d5d99ea201cb
+1646890276468	Marionette	INFO	Listening on port 49687
+1646890276710	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://s3.music.126.net/web/s/core_109a4c4e18e967b5ea413dbe39425ae8.js?109a4c4e18e967b5ea413dbe39425ae8, line 96: unreachable code after return statement
+JavaScript warning: https://s3.music.126.net/web/s/core_109a4c4e18e967b5ea413dbe39425ae8.js?109a4c4e18e967b5ea413dbe39425ae8, line 96: unreachable code after return statement
+1646890279178	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+JavaScript warning: https://s3.music.126.net/web/s/core_109a4c4e18e967b5ea413dbe39425ae8.js?109a4c4e18e967b5ea413dbe39425ae8, line 96: unreachable code after return statement
+JavaScript warning: https://s3.music.126.net/web/s/core_109a4c4e18e967b5ea413dbe39425ae8.js?109a4c4e18e967b5ea413dbe39425ae8, line 96: unreachable code after return statement
+1646890292751	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+1646890377074	geckodriver	INFO	Listening on 127.0.0.1:49808
+1646890380096	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "49809" "-no-remote" "-profile" "C:\\Users\\Administrator\\AppData\\Local\\Temp\\rust_mozprofilerXSNre"
+1646890380248	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Administrator\\AppData\\Local\\Temp\\rust_mozprofilerXSNre\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:49809/devtools/browser/dbe0c68d-3ee8-4948-a133-168bab5a7421
+1646890381320	Marionette	INFO	Listening on port 49815
+1646890381623	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://s3.music.126.net/web/s/core_109a4c4e18e967b5ea413dbe39425ae8.js?109a4c4e18e967b5ea413dbe39425ae8, line 96: unreachable code after return statement
+JavaScript warning: https://s3.music.126.net/web/s/core_109a4c4e18e967b5ea413dbe39425ae8.js?109a4c4e18e967b5ea413dbe39425ae8, line 96: unreachable code after return statement
+1646890384453	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+JavaScript warning: https://s3.music.126.net/web/s/core_109a4c4e18e967b5ea413dbe39425ae8.js?109a4c4e18e967b5ea413dbe39425ae8, line 96: unreachable code after return statement
+JavaScript warning: https://s3.music.126.net/web/s/core_109a4c4e18e967b5ea413dbe39425ae8.js?109a4c4e18e967b5ea413dbe39425ae8, line 96: unreachable code after return statement
+1646890403705	geckodriver	INFO	Listening on 127.0.0.1:49916
+1646890406719	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "49917" "-no-remote" "-profile" "C:\\Users\\Administrator\\AppData\\Local\\Temp\\rust_mozprofileJBIHyV"
+1646890406874	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Administrator\\AppData\\Local\\Temp\\rust_mozprofileJBIHyV\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:49917/devtools/browser/24e640de-45b1-43ef-8d4f-03d0a0e694a6
+1646890408141	Marionette	INFO	Listening on port 49922
+1646890408247	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://s3.music.126.net/web/s/core_109a4c4e18e967b5ea413dbe39425ae8.js?109a4c4e18e967b5ea413dbe39425ae8, line 96: unreachable code after return statement
+JavaScript warning: https://s3.music.126.net/web/s/core_109a4c4e18e967b5ea413dbe39425ae8.js?109a4c4e18e967b5ea413dbe39425ae8, line 96: unreachable code after return statement
+1646890411287	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+JavaScript warning: https://s3.music.126.net/web/s/core_109a4c4e18e967b5ea413dbe39425ae8.js?109a4c4e18e967b5ea413dbe39425ae8, line 96: unreachable code after return statement
+JavaScript warning: https://s3.music.126.net/web/s/core_109a4c4e18e967b5ea413dbe39425ae8.js?109a4c4e18e967b5ea413dbe39425ae8, line 96: unreachable code after return statement
